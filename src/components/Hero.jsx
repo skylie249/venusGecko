@@ -45,11 +45,11 @@ const Hero = () => {
         <div 
           className="w-full h-full bg-cover bg-center"
           style={{ 
-            backgroundImage: "url('https://images.unsplash.com/photo-1510137600163-2729bc6959a6?q=80&w=2000&auto=format&fit=crop')",
-            filter: "brightness(0.4)"
+            backgroundImage: "url('https://images.unsplash.com/photo-1534361960057-19889db9621e?q=80&w=2000&auto=format&fit=crop')",
+            filter: "brightness(0.7) contrast(1.1)"
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-venus-black/50 to-venus-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-venus-black/30 to-venus-black" />
       </div>
 
       <div className="relative z-10 px-4">
