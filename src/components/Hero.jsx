@@ -69,7 +69,7 @@ const Hero = () => {
           Venus Gecko: Your Living Jewel
         </p>
 
-        <div className="scroll-indicator absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
+        <div className="scroll-indicator mt-16 flex flex-col items-center gap-4">
           <span className="text-[10px] tracking-[0.3em] font-light text-venus-gold">SCROLL</span>
           <div className="w-px h-16 bg-gradient-to-b from-venus-gold to-transparent" />
         </div>
