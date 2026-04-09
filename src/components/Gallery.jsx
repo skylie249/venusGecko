@@ -11,28 +11,28 @@ const geckos = [
     morph: 'Drippy white spot',
     name: '듀쿠',
     status: 'Available',
-    img: 'https://cdn.qshop.ai/19603/gallery/ab13fb70bc4a11efac8e2991095ec71a.jpg?q=80&w=1000&auto=format&fit=crop',
+    img: '/images/duecoo.jpg',
   },
   {
     id: 2,
     morph: 'Cappucino',
     name: '라두',
     status: 'Available',
-    img: 'https://cdn.qshop.ai/19603/gallery/c931f170bc4a11ef995e4bedfe211d14.jpg?q=80&w=1000&auto=format&fit=crop',
+    img: '/images/radu.jpg',
   },
   {
     id: 3,
     morph: 'Lilly white',
     name: '티나',
     status: 'Available',
-    img: 'https://cdn.qshop.ai/19603/boards/94830850edba11ef9b8499fe686f8da5.jpg?q=80&w=1000&auto=format&fit=crop',
+    img: '/images/tina.jpg',
   },
   {
     id: 4,
     morph: 'Tri Extreme Harliquin',
     name: '코나',
     status: 'Available',
-    img: 'https://cdn.qshop.ai/19603/boards/aa97b130edbb11efb03ec5b402c6b683.jpg?q=80&w=1000&auto=format&fit=crop',
+    img: '/images/kona.jpg',
   },
 ];
 
