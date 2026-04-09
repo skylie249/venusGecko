@@ -49,7 +49,7 @@ const About = () => {
     <section 
       id="about" 
       ref={containerRef}
-      className="py-20 md:py-24 px-4 md:px-16 container mx-auto bg-venus-black"
+      className="pt-20 pb-10 md:py-24 px-4 md:px-16 container mx-auto bg-venus-black"
     >
       <div className="grid md:grid-cols-2 gap-20 items-center mb-24">
         <div ref={textRef} className="space-y-6">

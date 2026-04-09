@@ -63,7 +63,7 @@ const Gallery = () => {
     <section
       id="gallery"
       ref={containerRef}
-      className="py-20 md:py-24 bg-venus-dark"
+      className="pt-10 pb-20 md:py-24 bg-venus-dark"
     >
       <div className="container mx-auto px-4 md:px-16">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
