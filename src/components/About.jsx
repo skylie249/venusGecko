@@ -38,7 +38,7 @@ const About = () => {
         start: 'top 80%',
       },
       y: 30,
-      opacity: 0,
+      // opacity: 0,
       duration: 1,
       stagger: 0.2,
       ease: 'power3.out',
@@ -46,8 +46,8 @@ const About = () => {
   }, []);
 
   return (
-    <section 
-      id="about" 
+    <section
+      id="about"
       ref={containerRef}
       className="pt-20 pb-10 md:py-24 px-4 md:px-16 container mx-auto bg-venus-black"
     >
@@ -58,28 +58,28 @@ const About = () => {
             살아있는 보석,<br />그 이상의 가치
           </h2>
           <p className="text-white/60 text-lg md:text-xl font-light leading-relaxed max-w-lg">
-            베누스게코는 단순히 생명을 분양하는 곳을 넘어, 
-            하나의 예술적인 라이프스타일을 제안합니다. 
+            베누스게코는 단순히 생명을 분양하는 곳을 넘어,
+            하나의 예술적인 라이프스타일을 제안합니다.
             MZ 세대의 감각을 일깨우는 독보적인 퀄리티를 경험해 보세요.
           </p>
         </div>
 
         <div ref={cardRef} className="relative group">
           <div className="glass p-12 rounded-3xl border border-white/5 relative overflow-hidden h-[400px] flex flex-col justify-end">
-             <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 group-hover:opacity-20 transition-all duration-1000">
-                <Gem size={200} className="text-venus-gold" />
-             </div>
-             
-             <div className="relative z-10">
-               <Gem className="text-venus-gold mb-6" size={48} />
-               <h3 className="text-3xl font-bold mb-4">The Living Jewel</h3>
-               <p className="text-white/50 text-lg leading-relaxed max-w-sm">
-                 우리는 게코를 단순한 반려동물이 아닌 '동적 예술'로 정의합니다. 
-                 눈을 마주치는 순간 느끼는 경이로움을 전달합니다.
-               </p>
-             </div>
+            <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 group-hover:opacity-20 transition-all duration-1000">
+              <Gem size={200} className="text-venus-gold" />
+            </div>
+
+            <div className="relative z-10">
+              <Gem className="text-venus-gold mb-6" size={48} />
+              <h3 className="text-3xl font-bold mb-4">The Living Jewel</h3>
+              <p className="text-white/50 text-lg leading-relaxed max-w-sm">
+                우리는 게코를 단순한 반려동물이 아닌 '동적 예술'로 정의합니다.
+                눈을 마주치는 순간 느끼는 경이로움을 전달합니다.
+              </p>
+            </div>
           </div>
-          
+
           <div className="absolute -top-10 -left-10 w-40 h-40 bg-venus-gold/5 blur-[100px] -z-10 rounded-full" />
         </div>
       </div>
