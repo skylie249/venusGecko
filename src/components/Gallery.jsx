@@ -99,11 +99,11 @@ const Gallery = () => {
               key={gecko.id}
               className="gecko-card group bg-venus-black border border-white/5 overflow-hidden transition-all duration-500 hover:border-venus-gold/50"
             >
-              <div className="aspect-[4/5] bg-white/5 overflow-hidden">
+              <div className="aspect-[4/5] bg-white/5 overflow-hidden flex items-center justify-center p-8">
                 <img
                   src={gecko.img}
                   alt={gecko.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                   onLoad={() => ScrollTrigger.refresh()}
                 />
               </div>
