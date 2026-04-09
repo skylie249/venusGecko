@@ -91,10 +91,14 @@ const About = () => {
           { title: "Artistic Care", desc: "보석을 다루듯 섬세한 환경에서 최고의 컨디션을 유지합니다.", icon: "02" },
           { title: "Premium Trust", desc: "분양 후에도 이어지는 지속적인 관리와 소통을 약속합니다.", icon: "03" }
         ].map((item, idx) => (
-          <div key={idx} className="philosophy-item glass-dark p-10 rounded-2xl border border-white/5 hover:border-venus-gold/30 transition-all duration-500 group">
-            <span className="text-venus-gold/30 text-4xl block mb-6 font-playfair group-hover:text-venus-gold transition-colors">{item.icon}</span>
+          <div key={idx} className="philosophy-item glass-dark p-10 rounded-2xl border border-white/5 hover:border-venus-gold/30 transition-all duration-500 group flex flex-col h-full">
+            <span className="text-venus-gold/20 text-5xl block mb-8 font-playfair tabular-nums group-hover:text-venus-gold transition-all duration-700 leading-none">
+              {item.icon}
+            </span>
             <h4 className="text-xl font-bold mb-4 text-white group-hover:text-venus-gold transition-colors">{item.title}</h4>
-            <p className="text-white/40 text-sm leading-relaxed group-hover:text-white/70 transition-colors">{item.desc}</p>
+            <p className="text-white/40 text-sm leading-relaxed group-hover:text-white/70 transition-colors flex-grow">
+              {item.desc}
+            </p>
           </div>
         ))}
       </div>
