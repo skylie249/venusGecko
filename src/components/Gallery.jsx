@@ -71,10 +71,26 @@ const Gallery = () => {
             <h2 className="text-4xl md:text-6xl text-white">Digital Showroom</h2>
             <p className="text-white/50 text-lg font-light">베누스게코의 희소성 있는 라인업을 확인하세요.</p>
           </div>
-          <button className="text-venus-gold flex items-center gap-2 group tracking-widest text-sm uppercase">
-            View All Collection
-            <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform duration-300" />
-          </button>
+          <div className="flex gap-8 items-center">
+            <a
+              href="https://venus-gecko.qshop.ai/JeOaz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-venus-gold flex items-center gap-2 group tracking-widest text-sm uppercase"
+            >
+              MALE 알아보기
+              <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform duration-300" />
+            </a>
+            <a
+              href="https://venus-gecko.qshop.ai/Nt04q"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-venus-gold flex items-center gap-2 group tracking-widest text-sm uppercase"
+            >
+              FEMALE 알아보기
+              <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform duration-300" />
+            </a>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -100,9 +116,6 @@ const Gallery = () => {
                     {gecko.status}
                   </span>
                 </div>
-                <button className="w-full py-4 text-xs tracking-[0.2em] font-bold uppercase border border-white/10 text-white/80 hover:border-venus-gold hover:text-venus-gold transition-colors duration-300">
-                  Detailed Inventory
-                </button>
               </div>
             </div>
           ))}

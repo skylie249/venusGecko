@@ -19,19 +19,18 @@ const Navbar = () => {
   ];
 
   return (
-    <nav 
-      className={`fixed top-0 w-full flex justify-between items-center z-[1000] transition-all duration-500 px-8 py-6 md:px-16 ${
-        isScrolled ? 'bg-venus-black/95 py-4 backdrop-blur-md' : 'bg-transparent'
-      }`}
+    <nav
+      className={`fixed top-0 w-full flex justify-between items-center z-[1000] transition-all duration-500 px-8 py-6 md:px-16 ${isScrolled ? 'bg-venus-black/95 py-4 backdrop-blur-md' : 'bg-transparent'
+        }`}
     >
       <div className="font-playfair text-2xl font-black tracking-widest text-white">
         VENUS GECKO
       </div>
-      
+
       <ul className="hidden md:flex gap-12">
         {navLinks.map((link) => (
           <li key={link.name}>
-            <a 
+            <a
               href={link.href}
               className="text-white hover:text-venus-gold transition-colors duration-300 tracking-wide uppercase text-sm"
               onClick={(e) => {
@@ -46,13 +45,13 @@ const Navbar = () => {
       </ul>
 
       <div className="flex items-center gap-4">
-        <a 
-          href="https://open.kakao.com/o/gZhaGrwg" 
-          target="_blank" 
+        <a
+          href="https://open.kakao.com/o/gZhaGrwg"
+          target="_blank"
           rel="noopener noreferrer"
           className="border border-venus-gold px-6 py-2 text-sm tracking-widest hover:bg-venus-gold hover:text-venus-black transition-all duration-300"
         >
-          INQUIRY
+          문의
         </a>
       </div>
     </nav>
