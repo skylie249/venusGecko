@@ -9,30 +9,30 @@ const geckos = [
   {
     id: 1,
     morph: 'Drippy white spot',
-    name: 'Vanilla Dream',
+    name: '듀쿠',
     status: 'Available',
-    img: 'https://images.unsplash.com/photo-1590691566700-1175bac43d81?q=80&w=1000&auto=format&fit=crop',
+    img: 'https://cdn.qshop.ai/19603/gallery/ab13fb70bc4a11efac8e2991095ec71a.jpg?q=80&w=1000&auto=format&fit=crop',
   },
   {
     id: 2,
     morph: 'Cappucino',
-    name: 'Espresso Soul',
-    status: 'Showroom Only',
-    img: 'https://images.unsplash.com/photo-1548366086-7f1b76106622?q=80&w=1000&auto=format&fit=crop',
+    name: '라두',
+    status: 'Available',
+    img: 'https://cdn.qshop.ai/19603/gallery/c931f170bc4a11ef995e4bedfe211d14.jpg?q=80&w=1000&auto=format&fit=crop',
   },
   {
     id: 3,
     morph: 'Lilly white',
-    name: 'Pure Ivory',
+    name: '티나',
     status: 'Available',
-    img: 'https://images.unsplash.com/photo-1598153346810-860daa814c4b?q=80&w=1000&auto=format&fit=crop',
+    img: 'https://cdn.qshop.ai/19603/boards/94830850edba11ef9b8499fe686f8da5.jpg?q=80&w=1000&auto=format&fit=crop',
   },
   {
     id: 4,
     morph: 'Tri Extreme Harliquin',
-    name: 'Solar Flare',
+    name: '코나',
     status: 'Available',
-    img: 'https://images.unsplash.com/photo-1504450874802-0ba2bcd9b5ae?q=80&w=1000&auto=format&fit=crop',
+    img: 'https://cdn.qshop.ai/19603/boards/aa97b130edbb11efb03ec5b402c6b683.jpg?q=80&w=1000&auto=format&fit=crop',
   },
 ];
 
@@ -55,13 +55,13 @@ const Gallery = () => {
         clearProps: "all"
       });
     }, containerRef);
-    
+
     return () => ctx.revert();
   }, []);
 
   return (
-    <section 
-      id="gallery" 
+    <section
+      id="gallery"
       ref={containerRef}
       className="py-32 bg-venus-dark"
     >
@@ -79,13 +79,13 @@ const Gallery = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {geckos.map((gecko) => (
-            <div 
-              key={gecko.id} 
+            <div
+              key={gecko.id}
               className="gecko-card group bg-venus-black border border-white/5 overflow-hidden transition-all duration-500 hover:border-venus-gold/50"
             >
               <div className="aspect-[4/5] bg-white/5 overflow-hidden">
-                <img 
-                  src={gecko.img} 
+                <img
+                  src={gecko.img}
                   alt={gecko.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   onLoad={() => ScrollTrigger.refresh()}
