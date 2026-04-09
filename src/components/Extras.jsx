@@ -1,3 +1,5 @@
+import { Instagram, MessageCircle } from 'lucide-react';
+
 export const FloatingCTA = () => {
   return (
     <div className="fixed bottom-10 right-10 flex flex-col gap-6 z-[1001]">
