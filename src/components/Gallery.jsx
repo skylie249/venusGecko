@@ -1,6 +1,9 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight } from 'lucide-react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const geckos = [
   {
@@ -24,23 +27,34 @@ const geckos = [
     status: 'Available',
     img: 'https://images.unsplash.com/photo-1504450874802-0ba2bcd9b5ae?q=80&w=1000&auto=format&fit=crop',
   },
+  {
+    id: 4,
+    morph: 'Red Night',
+    name: 'Crimson Heart',
+    status: 'Available',
+    img: 'https://images.unsplash.com/photo-1551065715-992383c26021?q=80&w=1000&auto=format&fit=crop',
+  },
 ];
 
 const Gallery = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    gsap.from('.gecko-card', {
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top 70%',
-      },
-      y: 100,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.2,
-      ease: 'power3.out',
-    });
+    const ctx = gsap.context(() => {
+      gsap.from('.gecko-card', {
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 70%',
+        },
+        y: 100,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: 'power3.out',
+      });
+    }, containerRef);
+    
+    return () => ctx.revert();
   }, []);
 
   return (
@@ -52,7 +66,7 @@ const Gallery = () => {
       <div className="container mx-auto px-4 md:px-16">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div className="space-y-4">
-            <h2 className="text-4xl md:text-6xl">Digital Showroom</h2>
+            <h2 className="text-4xl md:text-6xl text-white">Digital Showroom</h2>
             <p className="text-white/50 text-lg font-light">베누스게코의 희소성 있는 라인업을 확인하세요.</p>
           </div>
           <button className="text-venus-gold flex items-center gap-2 group tracking-widest text-sm uppercase">
@@ -61,7 +75,7 @@ const Gallery = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {geckos.map((gecko) => (
             <div 
               key={gecko.id} 
