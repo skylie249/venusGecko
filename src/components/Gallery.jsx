@@ -8,31 +8,31 @@ gsap.registerPlugin(ScrollTrigger);
 const geckos = [
   {
     id: 1,
-    morph: 'Lilly White',
-    name: 'Snow Queen',
+    morph: 'Drippy white spot',
+    name: 'Vanilla Dream',
     status: 'Available',
     img: 'https://images.unsplash.com/photo-1598153346810-860daa814c4b?q=80&w=1000&auto=format&fit=crop',
   },
   {
     id: 2,
-    morph: 'Dark Axanthic',
-    name: 'Midnight Phantom',
+    morph: 'Cappucino',
+    name: 'Espresso Soul',
     status: 'Showroom Only',
     img: 'https://images.unsplash.com/photo-1534361960057-19889db9621e?q=80&w=1000&auto=format&fit=crop',
   },
   {
     id: 3,
-    morph: 'Extreme Harlequin',
-    name: 'Golden Flare',
+    morph: 'Lilly white',
+    name: 'Pure Ivory',
     status: 'Available',
-    img: 'https://images.unsplash.com/photo-1504450874802-0ba2bcd9b5ae?q=80&w=1000&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1629190785172-0050acc61f80?q=80&w=1000&auto=format&fit=crop',
   },
   {
     id: 4,
-    morph: 'Red Night',
-    name: 'Crimson Heart',
+    morph: 'Tri Extreme Harliquin',
+    name: 'Solar Flare',
     status: 'Available',
-    img: 'https://images.unsplash.com/photo-1551065715-992383c26021?q=80&w=1000&auto=format&fit=crop',
+    img: 'https://images.unsplash.com/photo-1504450874802-0ba2bcd9b5ae?q=80&w=1000&auto=format&fit=crop',
   },
 ];
 
@@ -53,13 +53,13 @@ const Gallery = () => {
         ease: 'power3.out',
       });
     }, containerRef);
-    
+
     return () => ctx.revert();
   }, []);
 
   return (
-    <section 
-      id="gallery" 
+    <section
+      id="gallery"
       ref={containerRef}
       className="py-32 bg-venus-dark"
     >
@@ -77,13 +77,13 @@ const Gallery = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {geckos.map((gecko) => (
-            <div 
-              key={gecko.id} 
+            <div
+              key={gecko.id}
               className="gecko-card group bg-venus-black border border-white/5 overflow-hidden transition-all duration-500 hover:border-venus-gold/50"
             >
               <div className="aspect-[4/5] overflow-hidden">
-                <img 
-                  src={gecko.img} 
+                <img
+                  src={gecko.img}
                   alt={gecko.name}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
@@ -92,9 +92,8 @@ const Gallery = () => {
                 <span className="text-venus-gold text-[10px] tracking-widest uppercase font-bold">{gecko.morph}</span>
                 <div className="flex justify-between items-center">
                   <h3 className="text-2xl font-bold">{gecko.name}</h3>
-                  <span className={`text-[10px] px-2 py-1 border ${
-                    gecko.status === 'Available' ? 'border-venus-gold text-venus-gold' : 'border-white/20 text-white/40'
-                  }`}>
+                  <span className={`text-[10px] px-2 py-1 border ${gecko.status === 'Available' ? 'border-venus-gold text-venus-gold' : 'border-white/20 text-white/40'
+                    }`}>
                     {gecko.status}
                   </span>
                 </div>
