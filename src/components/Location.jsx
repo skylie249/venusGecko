@@ -43,7 +43,7 @@ const Location = () => {
   }, []);
 
   return (
-    <section id="location" className="py-32 bg-venus-black">
+    <section id="location" className="py-20 md:py-24 bg-venus-black px-4 md:px-16">
       <div className="container mx-auto px-4 md:px-16">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">

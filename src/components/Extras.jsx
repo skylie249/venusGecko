@@ -33,11 +33,11 @@ export const FloatingCTA = () => {
 
 export const Footer = () => {
   return (
-    <footer className="pt-32 pb-16 border-t border-white/5 bg-venus-black overflow-hidden relative">
+    <footer className="pt-20 md:pt-24 pb-12 border-t border-white/5 bg-venus-black overflow-hidden relative">
       <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-venus-gold/5 blur-[150px] rounded-full" />
       
       <div className="container mx-auto px-4 md:px-16 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-16 mb-20">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-16 mb-12">
           <div className="max-w-md">
             <h2 className="font-playfair text-4xl font-black tracking-widest text-white mb-8">
               VENUS GECKO
