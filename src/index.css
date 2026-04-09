@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-venus-gold: #C5A059;
+  --color-venus-black: #050505;
+  --color-venus-dark: #0D0D0D;
+  --font-playfair: "Playfair Display", serif;
+  --font-jakarta: "Plus Jakarta Sans", sans-serif;
+}
+
+@layer base {
+  :root {
+    --bg-color: #050505;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+  }
+
+  * {
+    cursor: none;
+  }
+
+  body {
+    @apply bg-venus-black text-white font-jakarta overflow-x-hidden selection:bg-venus-gold selection:text-venus-black;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3 {
+    @apply font-playfair font-bold;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  
+  .glass-dark {
+    @apply bg-black/40 backdrop-blur-xl border border-white/5;
+  }
+}
+
+/* Custom Cursor */
+#cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: #C5A059;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #C5A059;
+  border-radius: 10px;
+}
