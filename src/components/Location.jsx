@@ -6,36 +6,39 @@ const Location = () => {
 
   useEffect(() => {
     const { kakao } = window;
-    if (!kakao) return;
+    if (!kakao) {
+      console.warn('Kakao Maps script not found. Make sure it is added to index.html');
+      return;
+    }
 
-    const container = mapRef.current;
-    const options = {
-      center: new kakao.maps.LatLng(37.541, 127.071), // Approximate center for Gwangjin-gu
-      level: 3
-    };
+    kakao.maps.load(() => {
+      const container = mapRef.current;
+      const options = {
+        center: new kakao.maps.LatLng(37.5411, 127.0706), // Default to showroom coordinates
+        level: 3
+      };
 
-    const map = new kakao.maps.Map(container, options);
-    const geocoder = new kakao.maps.services.Geocoder();
+      const map = new kakao.maps.Map(container, options);
+      const geocoder = new kakao.maps.services.Geocoder();
 
-    // Geocode the address from the code
-    geocoder.addressSearch('서울 광진구 동일로 34', (result, status) => {
-      if (status === kakao.maps.services.Status.OK) {
-        const coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+      // Geocode the address from the code
+      geocoder.addressSearch('서울 광진구 동일로 34', (result, status) => {
+        if (status === kakao.maps.services.Status.OK) {
+          const coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 
-        // Custom Marker
-        const marker = new kakao.maps.Marker({
-          map: map,
-          position: coords
-        });
+          const marker = new kakao.maps.Marker({
+            map: map,
+            position: coords
+          });
 
-        // Add infowindow for the brand name
-        const infowindow = new kakao.maps.InfoWindow({
-          content: '<div style="width:150px;text-align:center;padding:6px 0;font-family:sans-serif;font-size:12px;color:#0a0a0a;">VENUS GECKO</div>'
-        });
-        infowindow.open(map, marker);
+          const infowindow = new kakao.maps.InfoWindow({
+            content: '<div style="width:150px;text-align:center;padding:10px;font-family:sans-serif;font-size:12px;color:#333;font-weight:bold;background:#fff;border-radius:4px;">VENUS GECKO</div>'
+          });
+          infowindow.open(map, marker);
 
-        map.setCenter(coords);
-      }
+          map.setCenter(coords);
+        }
+      });
     });
   }, []);
 
