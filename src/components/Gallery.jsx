@@ -102,7 +102,7 @@ const Gallery = () => {
               <div className="aspect-[4/5] bg-white/5 overflow-hidden flex items-center justify-center p-8">
                 <img
                   src={gecko.img}
-                  alt={gecko.name}
+                  alt={`${gecko.name} - ${gecko.morph} Crested Gecko | 베누스게코`}
                   className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                   onLoad={() => ScrollTrigger.refresh()}
                 />
