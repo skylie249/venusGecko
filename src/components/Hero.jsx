@@ -45,7 +45,7 @@ const Hero = () => {
         <div 
           className="w-full h-full bg-cover bg-center"
           style={{ 
-            backgroundImage: "url('https://images.unsplash.com/photo-1534361960057-19889db9621e?q=80&w=2000&auto=format&fit=crop')",
+            backgroundImage: "url('/images/Gemini_Generated_Image_78wpu678wpu678wp.png')",
             filter: "brightness(0.7) contrast(1.1)"
           }}
         />
