@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "about": "アバウト",
+    "showroom": "ショールーム",
+    "visit": "アクセス",
+    "contact": "お問い合わせ"
+  },
+  "hero": {
+    "sub": "目が合う瞬間、夢中になる。",
+    "title1": "目が合う瞬間",
+    "title2": "始まる不思議な中毒",
+    "desc": "Venus Gecko：あなたの生きる宝石。人工物の華やかさよりも、生命の驚異に注目します。"
+  },
+  "about": {
+    "sub": "Core Essence",
+    "title": "生きる宝石、\nその以上の価値",
+    "desc": "ベヌスゲコは単に生命を販売する場所を超え、一つの芸術的なライフスタイルを提案します。MZ世代の感性を呼び覚ます独歩的なクオリティを体験してください。",
+    "gem_title": "The Living Jewel",
+    "gem_desc": "私たちはゲコを単なるペットではなく『動的芸術』と定義します。目が合う瞬間に感じる驚きを伝えます。",
+    "philosophy": {
+      "item1": {
+        "title": "Pure Quality",
+        "desc": "厳格な選別プロセスを経た、最高級モフの個体のみを披露します。"
+      },
+      "item2": {
+        "title": "Artistic Care",
+        "desc": "宝石を扱うように繊細な環境で、最高のコンディションを維持します。"
+      },
+      "item3": {
+        "title": "Premium Trust",
+        "desc": "お迎え後も続く継続的な管理とコミュニケーションを約束します。"
+      }
+    }
+  },
+  "gallery": {
+    "title": "デジタルショールーム",
+    "desc": "ベヌスゲコの希少なラインナップをご覧ください。",
+    "male": "MALEを見る",
+    "female": "FEMALEを見る",
+    "available": "お迎え可能",
+    "sold": "ご家族決定"
+  },
+  "location": {
+    "title": "スペースを訪ねる",
+    "desc": "生きる宝石たちに満ちたベヌスゲコショールームを直接体験してください。最高の環境でケアされているお迎え待機中の個体たちに会うことができます。",
+    "address": "ソウル 広津区 同一路 34 地下1階",
+    "reservation": "予約する"
+  },
+  "footer": {
+    "desc": "生きる宝石、その以上の価値を伝えます。\nMZ世代の新しいライフスタイルを提案するプレミアムゲコブランド。",
+    "showroom_title": "Showroom",
+    "address_info": "ソウル 広津区 同一路 34\n地下1階 (要予約)",
+    "contact_title": "Contact",
+    "copy": "© 2026 Venus Gecko. All Rights Reserved. Crafted for Excellency."
+  },
+  "geckos": {
+    "duecoo": "デュク",
+    "radu": "ラドゥ",
+    "tina": "ティナ",
+    "kona": "コナ",
+    "brand_tail": "| ベヌスゲコ"
+  }
+}

@@ -1,6 +1,8 @@
+import { useTranslation } from 'react-i18next';
 import { Instagram, MessageCircle } from 'lucide-react';
 
 export const FloatingCTA = () => {
+  const { t } = useTranslation();
   return (
     <div className="fixed bottom-10 right-10 flex flex-col gap-6 z-[1001]">
        <a 
@@ -32,6 +34,7 @@ export const FloatingCTA = () => {
 };
 
 export const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer className="pt-20 md:pt-24 pb-12 border-t border-white/5 bg-venus-black overflow-hidden relative">
       <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-venus-gold/5 blur-[150px] rounded-full" />
@@ -43,21 +46,23 @@ export const Footer = () => {
               VENUS GECKO
             </h2>
             <p className="text-white/40 text-lg font-light leading-relaxed">
-              살아있는 보석, 그 이상의 가치를 전달합니다.<br />
-              MZ세대의 새로운 라이프스타일을 제안하는 프리미엄 게코 브랜드.
+              {t('footer.desc').split('\n').map((line, i) => (
+                <span key={i}>{line}{i === 0 && <br />}</span>
+              ))}
             </p>
           </div>
           
           <div className="grid grid-cols-2 gap-20">
             <div className="space-y-6">
-              <h4 className="text-venus-gold text-xs tracking-[0.3em] uppercase font-bold">Showroom</h4>
+              <h4 className="text-venus-gold text-xs tracking-[0.3em] uppercase font-bold">{t('footer.showroom_title')}</h4>
               <p className="text-white/60 text-sm font-light">
-                서울 광진구 동일로 34<br />
-                지하 1층 (예약 필수)
+                {t('footer.address_info').split('\n').map((line, i) => (
+                  <span key={i}>{line}{i === 0 && <br />}</span>
+                ))}
               </p>
             </div>
             <div className="space-y-6">
-              <h4 className="text-venus-gold text-xs tracking-[0.3em] uppercase font-bold">Contact</h4>
+              <h4 className="text-venus-gold text-xs tracking-[0.3em] uppercase font-bold">{t('footer.contact_title')}</h4>
               <p className="text-white/60 text-sm font-light">
                 Kakao: Venus Gecko<br />
                 Instagram: @venus_gecko
@@ -68,7 +73,7 @@ export const Footer = () => {
         
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
           <p className="text-white/20 text-[10px] tracking-[0.3em] uppercase">
-            &copy; 2026 Venus Gecko. All Rights Reserved. Crafted for Excellency.
+            {t('footer.copy')}
           </p>
           <div className="flex gap-10 text-white/40 text-[10px] tracking-[0.3em] uppercase font-medium">
              <a href="#" className="hover:text-venus-gold transition-colors">Privacy</a>

@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "showroom": "Showroom",
+    "visit": "Visit",
+    "contact": "Contact"
+  },
+  "hero": {
+    "sub": "Eye-contact addicts.",
+    "title1": "When Eyes Meet",
+    "title2": "The Addiction Begins",
+    "desc": "Venus Gecko: Your Living Jewel. We focus on the wonder of life rather than artificial splendor."
+  },
+  "about": {
+    "sub": "Core Essence",
+    "title": "Living Jewel,\nBeyond Value",
+    "desc": "Venus Gecko is more than just a breeder; we propose an artistic lifestyle. Experience the unique quality that awakens the senses of the modern generation.",
+    "gem_title": "The Living Jewel",
+    "gem_desc": "We define geckos as 'dynamic art' rather than just pets. We deliver the wonder felt the moment eyes meet.",
+    "philosophy": {
+      "item1": {
+        "title": "Pure Quality",
+        "desc": "We showcase only top-tier morphs that have undergone strict selection processes."
+      },
+      "item2": {
+        "title": "Artistic Care",
+        "desc": "We maintain the best condition in a delicate environment, treating them like gems."
+      },
+      "item3": {
+        "title": "Premium Trust",
+        "desc": "We promise continuous management and communication even after adoption."
+      }
+    }
+  },
+  "gallery": {
+    "title": "Digital Showroom",
+    "desc": "Explore our rare and exclusive lineup of geckos.",
+    "male": "View MALE",
+    "female": "View FEMALE",
+    "available": "Available",
+    "sold": "Sold Out"
+  },
+  "location": {
+    "title": "Visit Our Space",
+    "desc": "Experience the Venus Gecko showroom filled with living jewels. Meet geckos waiting for adoption cared for in the finest environment.",
+    "address": "B1, 34 Dongil-ro, Gwangjin-gu, Seoul",
+    "reservation": "Book a Visit"
+  },
+  "footer": {
+    "desc": "Delivering value beyond living gems.\nPremium gecko brand proposing a new lifestyle.",
+    "showroom_title": "Showroom",
+    "address_info": "34 Dongil-ro, Gwangjin-gu, Seoul\nB1F (Reservation Required)",
+    "contact_title": "Contact",
+    "copy": "© 2026 Venus Gecko. All Rights Reserved. Crafted for Excellency."
+  },
+  "geckos": {
+    "duecoo": "Duecoo",
+    "radu": "Radu",
+    "tina": "Tina",
+    "kona": "Kona",
+    "brand_tail": "| Venus Gecko"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "home": "홈",
+    "about": "어바웃",
+    "showroom": "쇼룸",
+    "visit": "방문하기",
+    "contact": "문의"
+  },
+  "hero": {
+    "sub": "눈을 맞추는 순간 중독되는.",
+    "title1": "눈을 맞추는 순간",
+    "title2": "시작되는 묘한 중독",
+    "desc": "Venus Gecko: 당신의 살아있는 보석. 인공물의 화려함보다 생명의 경이로움에 주목합니다."
+  },
+  "about": {
+    "sub": "Core Essence",
+    "title": "살아있는 보석,\n그 이상의 가치",
+    "desc": "베누스게코는 단순히 생명을 분양하는 곳을 넘어, 하나의 예술적인 라이프스타일을 제안합니다. MZ 세대의 감각을 일깨우는 독보적인 퀄리티를 경험해 보세요.",
+    "gem_title": "The Living Jewel",
+    "gem_desc": "우리는 게코를 단순한 반려동물이 아닌 '동적 예술'로 정의합니다. 눈을 마주치는 순간 느끼는 경이로움을 전달합니다.",
+    "philosophy": {
+      "item1": {
+        "title": "Pure Quality",
+        "desc": "엄격한 선별 과정을 거친 최상위 모프의 개체만을 선보입니다."
+      },
+      "item2": {
+        "title": "Artistic Care",
+        "desc": "보석을 다루듯 섬세한 환경에서 최고의 컨디션을 유지합니다."
+      },
+      "item3": {
+        "title": "Premium Trust",
+        "desc": "분양 후에도 이어지는 지속적인 관리와 소통을 약속합니다."
+      }
+    }
+  },
+  "gallery": {
+    "title": "디지털 쇼룸",
+    "desc": "베누스게코의 희소성 있는 라인업을 확인하세요.",
+    "male": "MALE 알아보기",
+    "female": "FEMALE 알아보기",
+    "available": "입양 가능",
+    "sold": "분양 완료"
+  },
+  "location": {
+    "title": "공간 방문하기",
+    "desc": "살아있는 보석들이 가득한 베누스게코 쇼룸을 직접 경험해 보세요. 최고의 환경에서 케어받는 입양 대기 개체들을 만나보실 수 있습니다.",
+    "address": "서울 광진구 동일로 34 지하1층",
+    "reservation": "방문 예약하기"
+  },
+  "footer": {
+    "desc": "살아있는 보석, 그 이상의 가치를 전달합니다.\nMZ세대의 새로운 라이프스타일을 제안하는 프리미엄 게코 브랜드.",
+    "showroom_title": "Showroom",
+    "address_info": "서울 광진구 동일로 34\n지하 1층 (예약 필수)",
+    "contact_title": "Contact",
+    "copy": "© 2026 Venus Gecko. All Rights Reserved. Crafted for Excellency."
+  },
+  "geckos": {
+    "duecoo": "듀쿠",
+    "radu": "라두",
+    "tina": "티나",
+    "kona": "코나",
+    "brand_tail": "| 베누스게코"
+  }
+}

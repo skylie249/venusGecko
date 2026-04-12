@@ -1,6 +1,8 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 import { ArrowRight } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -9,39 +11,41 @@ const geckos = [
   {
     id: 1,
     morph: 'Drippy white spot',
-    name: '듀쿠',
+    nameKey: 'duecoo',
     status: 'Available',
     img: '/images/duecoo.jpg',
   },
   {
     id: 2,
     morph: 'Cappucino',
-    name: '라두',
+    nameKey: 'radu',
     status: 'Available',
     img: '/images/radu.jpg',
   },
   {
     id: 3,
     morph: 'Lilly white',
-    name: '티나',
+    nameKey: 'tina',
     status: 'Available',
     img: '/images/tina.jpg',
   },
   {
     id: 4,
     morph: 'Tri Extreme Harliquin',
-    name: '코나',
+    nameKey: 'kona',
     status: 'Available',
     img: '/images/kona.jpg',
   },
 ];
 
 const Gallery = () => {
+  const { t } = useTranslation();
   const containerRef = useRef(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from('.gecko-card', {
+  useGSAP(() => {
+    const cards = containerRef.current.querySelectorAll('.gecko-card');
+    if (cards.length > 0) {
+      gsap.from(cards, {
         scrollTrigger: {
           trigger: containerRef.current,
           start: 'top 85%',
@@ -54,10 +58,8 @@ const Gallery = () => {
         ease: 'power3.out',
         clearProps: "all"
       });
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
+    }
+  }, { scope: containerRef });
 
   return (
     <section
@@ -68,8 +70,8 @@ const Gallery = () => {
       <div className="container mx-auto px-4 md:px-16">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div className="space-y-4">
-            <h2 className="text-4xl md:text-6xl text-white">Digital Showroom</h2>
-            <p className="text-white/50 text-lg font-light">베누스게코의 희소성 있는 라인업을 확인하세요.</p>
+            <h2 className="text-4xl md:text-6xl text-white">{t('gallery.title')}</h2>
+            <p className="text-white/50 text-lg font-light">{t('gallery.desc')}</p>
           </div>
           <div className="flex gap-8 items-center">
             <a
@@ -78,7 +80,7 @@ const Gallery = () => {
               rel="noopener noreferrer"
               className="text-venus-gold flex items-center gap-2 group tracking-widest text-sm uppercase"
             >
-              MALE 알아보기
+              {t('gallery.male')}
               <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform duration-300" />
             </a>
             <a
@@ -87,7 +89,7 @@ const Gallery = () => {
               rel="noopener noreferrer"
               className="text-venus-gold flex items-center gap-2 group tracking-widest text-sm uppercase"
             >
-              FEMALE 알아보기
+              {t('gallery.female')}
               <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform duration-300" />
             </a>
           </div>
@@ -102,7 +104,7 @@ const Gallery = () => {
               <div className="aspect-[4/5] bg-white/5 overflow-hidden flex items-center justify-center p-8">
                 <img
                   src={gecko.img}
-                  alt={`${gecko.name} - ${gecko.morph} Crested Gecko | 베누스게코`}
+                  alt={`${t(`geckos.${gecko.nameKey}`)} - ${gecko.morph} Crested Gecko ${t('geckos.brand_tail')}`}
                   className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                   onLoad={() => ScrollTrigger.refresh()}
                 />
@@ -110,10 +112,10 @@ const Gallery = () => {
               <div className="p-8 space-y-4">
                 <span className="text-venus-gold text-[10px] tracking-widest uppercase font-bold">{gecko.morph}</span>
                 <div className="flex justify-between items-center">
-                  <h3 className="text-2xl font-bold text-white">{gecko.name}</h3>
+                  <h3 className="text-2xl font-bold text-white">{t(`geckos.${gecko.nameKey}`)}</h3>
                   <span className={`text-[10px] px-2 py-1 border ${gecko.status === 'Available' ? 'border-venus-gold text-venus-gold' : 'border-white/20 text-white/40'
                     }`}>
-                    {gecko.status}
+                    {gecko.status === 'Available' ? t('gallery.available') : t('gallery.sold')}
                   </span>
                 </div>
               </div>
