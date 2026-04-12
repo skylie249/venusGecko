@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于",
+    "showroom": "展厅",
+    "visit": "参观",
+    "contact": "联系"
+  },
+  "hero": {
+    "sub": "眼神交汇的沉醉。",
+    "title1": "当目光相连",
+    "title2": "迷恋便开始了",
+    "desc": "Venus Gecko：您的活体宝石。我们专注于生命之奇迹，而非人造的华丽。",
+    "badge": {
+      "top": "睫角守宫专业繁育者",
+      "brand_kr": "Venus Gecko",
+      "brand_en": "VENUS GECKO",
+      "bottom": "睫角守宫专业繁育与销售"
+    }
+  },
+  "about": {
+    "sub": "核心理念",
+    "title": "活体宝石，\n超越价值",
+    "desc": "Venus Gecko 不仅仅是繁育者；我们更倡导一种艺术化的生活方式。我们提供唤醒视觉感官的独特品质。",
+    "gem_title": "活体宝石",
+    "gem_desc": "我们将守宫定义为“动态艺术”，而不仅仅是宠物。传递目光交汇瞬间所感受到的生命奇迹。",
+    "philosophy": {
+      "item1": {
+        "title": "纯正品质",
+        "desc": "我们只展示经过严格筛选的顶级品系。"
+      },
+      "item2": {
+        "title": "艺术级照料",
+        "desc": "我们在极致的环境中，如同呵护宝石般保持它们最佳状态。"
+      },
+      "item3": {
+        "title": "至高信任",
+        "desc": "我们承诺即使在领养后，依然提供持续的管理以确保健康成长。"
+      }
+    }
+  },
+  "gallery": {
+    "title": "数字展厅",
+    "desc": "探索我们稀有且独家的守宫阵容。",
+    "male": "查看雄性 (MALE)",
+    "female": "查看雌性 (FEMALE)",
+    "available": "可售",
+    "sold": "已售罄"
+  },
+  "location": {
+    "title": "参观我们的空间",
+    "desc": "体验充满鲜活宝石的 Venus Gecko 展厅。在最优的环境中，认识等待领养的守宫。",
+    "address": "首尔广津区东一路34号地下1层",
+    "reservation": "预约参观"
+  },
+  "footer": {
+    "desc": "传递超越活体宝石的价值。\n提出全新生活方式的专业守宫品牌。",
+    "showroom_title": "展厅",
+    "address_info": "首尔广津区东一路34号\n地下1层 (需预约)",
+    "contact_title": "联系",
+    "copy": "© 2026 Venus Gecko. 保留所有权利. 为卓越而生。"
+  },
+  "geckos": {
+    "duecoo": "Duecoo",
+    "radu": "Radu",
+    "tina": "Tina",
+    "kona": "Kona",
+    "brand_tail": "| Venus Gecko"
+  }
+}
