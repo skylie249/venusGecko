@@ -15,15 +15,7 @@
     --text-secondary: #a0a0a0;
   }
 
-  * {
-    cursor: none;
-  }
 
-  @media (hover: none) and (pointer: coarse) {
-    * {
-      cursor: auto !important;
-    }
-  }
 
   body {
     @apply bg-venus-black text-white font-jakarta overflow-x-hidden selection:bg-venus-gold selection:text-venus-black;
@@ -45,23 +37,6 @@
   }
 }
 
-/* Custom Cursor */
-#cursor {
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  background: #C5A059;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  mix-blend-mode: difference;
-}
-
-@media (hover: none) and (pointer: coarse) {
-  #cursor {
-    display: none;
-  }
-}
 
 /* Scrollbar */
 ::-webkit-scrollbar {

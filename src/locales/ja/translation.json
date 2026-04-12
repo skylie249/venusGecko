@@ -10,7 +10,13 @@
     "sub": "目が合う瞬間、夢中になる。",
     "title1": "目が合う瞬間",
     "title2": "始まる不思議な中毒",
-    "desc": "Venus Gecko：あなたの生きる宝石。人工物の華やかさよりも、生命の驚異に注目します。"
+    "desc": "Venus Gecko：あなたの生きる宝石。人工物の華やかさよりも、生命の驚異に注目します。",
+    "badge": {
+      "top": "クレステッドゲッコー専門ブリーダー",
+      "brand_kr": "ヴェヌスゲッコー",
+      "brand_en": "VENUS GECKO",
+      "bottom": "Crested Gecko Specialised Breeding & Sale"
+    }
   },
   "about": {
     "sub": "Core Essence",

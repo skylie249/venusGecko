@@ -1,13 +1,30 @@
 import { useTranslation } from 'react-i18next';
-import { Instagram, MessageCircle } from 'lucide-react';
+import { Instagram, MessageCircle, List } from 'lucide-react';
 
 export const FloatingCTA = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isGlobal = i18n.language === 'en' || i18n.language === 'ja';
+  const feedleUrl = isGlobal 
+    ? "https://air.feedle.me/profile/dd285e94-18e9-4444-a40f-bc34075d6d06" 
+    : "https://www.feedle.me/profile/dd285e94-18e9-4444-a40f-bc34075d6d06";
+
   return (
     <div className="fixed bottom-10 right-10 flex flex-col gap-6 z-[1001]">
-       <a 
-        href="https://open.kakao.com/o/gZhaGrwg" 
-        target="_blank" 
+      <a
+        href={feedleUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group relative w-16 h-16 bg-white text-black rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:scale-110 transition-all duration-500 cursor-pointer"
+      >
+        <List size={32} />
+        <span className="absolute right-20 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white text-xs tracking-widest opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-white/5">
+          AVAILABLE LIST
+        </span>
+      </a>
+
+      <a
+        href="https://open.kakao.com/o/gZhaGrwg"
+        target="_blank"
         rel="noopener noreferrer"
         className="group relative w-16 h-16 bg-[#FEE500] text-[#3c1e1e] rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(254,229,0,0.3)] hover:scale-110 transition-all duration-500"
       >
@@ -17,10 +34,10 @@ export const FloatingCTA = () => {
           KAKAO TALK
         </span>
       </a>
-      
-      <a 
-        href="https://www.instagram.com/venus_gecko" 
-        target="_blank" 
+
+      <a
+        href="https://www.instagram.com/venus_gecko"
+        target="_blank"
         rel="noopener noreferrer"
         className="group relative w-16 h-16 bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(220,39,67,0.3)] hover:scale-110 transition-all duration-500"
       >
@@ -38,7 +55,7 @@ export const Footer = () => {
   return (
     <footer className="pt-20 md:pt-24 pb-12 border-t border-white/5 bg-venus-black overflow-hidden relative">
       <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-venus-gold/5 blur-[150px] rounded-full" />
-      
+
       <div className="container mx-auto px-4 md:px-16 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-start gap-16 mb-12">
           <div className="max-w-md">
@@ -51,7 +68,7 @@ export const Footer = () => {
               ))}
             </p>
           </div>
-          
+
           <div className="grid grid-cols-2 gap-20">
             <div className="space-y-6">
               <h4 className="text-venus-gold text-xs tracking-[0.3em] uppercase font-bold">{t('footer.showroom_title')}</h4>
@@ -70,15 +87,15 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
           <p className="text-white/20 text-[10px] tracking-[0.3em] uppercase">
             {t('footer.copy')}
           </p>
           <div className="flex gap-10 text-white/40 text-[10px] tracking-[0.3em] uppercase font-medium">
-             <a href="#" className="hover:text-venus-gold transition-colors">Privacy</a>
-             <a href="#" className="hover:text-venus-gold transition-colors">Terms</a>
-             <a href="#" className="hover:text-venus-gold transition-colors">Legal</a>
+            <a href="#" className="hover:text-venus-gold transition-colors">Privacy</a>
+            <a href="#" className="hover:text-venus-gold transition-colors">Terms</a>
+            <a href="#" className="hover:text-venus-gold transition-colors">Legal</a>
           </div>
         </div>
       </div>

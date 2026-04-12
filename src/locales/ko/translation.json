@@ -7,10 +7,16 @@
     "contact": "문의"
   },
   "hero": {
-    "sub": "눈을 맞추는 순간 중독되는.",
+    "sub": "눈을 맞추는 순간 빠져드는.",
     "title1": "눈을 맞추는 순간",
-    "title2": "시작되는 묘한 중독",
-    "desc": "Venus Gecko: 당신의 살아있는 보석. 인공물의 화려함보다 생명의 경이로움에 주목합니다."
+    "title2": "시작되는 운명적인 끌림",
+    "desc": "Venus Gecko: 당신의 살아있는 보석. 인공물의 화려함보다 생명의 경이로움에 주목합니다.",
+    "badge": {
+      "top": "크레스티드 게코 전문 분양",
+      "brand_kr": "베누스게코",
+      "brand_en": "VENUS GECKO",
+      "bottom": "Crested Gecko Specialised Breeding & Sale"
+    }
   },
   "about": {
     "sub": "Core Essence",

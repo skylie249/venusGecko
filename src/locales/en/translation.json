@@ -10,7 +10,13 @@
     "sub": "Eye-contact addicts.",
     "title1": "When Eyes Meet",
     "title2": "The Addiction Begins",
-    "desc": "Venus Gecko: Your Living Jewel. We focus on the wonder of life rather than artificial splendor."
+    "desc": "Venus Gecko: Your Living Jewel. We focus on the wonder of life rather than artificial splendor.",
+    "badge": {
+      "top": "Crested Gecko Specialised Breeder",
+      "brand_kr": "Venus Gecko",
+      "brand_en": "VENUS GECKO",
+      "bottom": "Crested Gecko Specialised Breeding & Sale"
+    }
   },
   "about": {
     "sub": "Core Essence",
