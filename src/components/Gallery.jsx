@@ -113,10 +113,6 @@ const Gallery = () => {
                 <span className="text-venus-gold text-[10px] tracking-widest uppercase font-bold">{gecko.morph}</span>
                 <div className="flex justify-between items-center">
                   <h3 className="text-2xl font-bold text-white">{t(`geckos.${gecko.nameKey}`)}</h3>
-                  <span className={`text-[10px] px-2 py-1 border ${gecko.status === 'Available' ? 'border-venus-gold text-venus-gold' : 'border-white/20 text-white/40'
-                    }`}>
-                    {gecko.status === 'Available' ? t('gallery.available') : t('gallery.sold')}
-                  </span>
                 </div>
               </div>
             </div>
