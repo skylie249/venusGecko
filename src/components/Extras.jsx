@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import { Instagram, MessageCircle, List } from 'lucide-react';
+import { Instagram, MessageCircle, List, Users } from 'lucide-react';
 
 export const FloatingCTA = () => {
   const { t, i18n } = useTranslation();
-  const isGlobal = i18n.language === 'en' || i18n.language === 'ja';
+  const isGlobal = i18n.language === 'en' || i18n.language === 'ja' || i18n.language === 'zh';
   const feedleUrl = isGlobal
     ? "https://air.feedle.me/profile/dd285e94-18e9-4444-a40f-bc34075d6d06"
     : "https://www.feedle.me/profile/dd285e94-18e9-4444-a40f-bc34075d6d06";
@@ -44,6 +44,18 @@ export const FloatingCTA = () => {
         <Instagram size={32} />
         <span className="absolute right-20 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white text-xs tracking-widest opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-white/5">
           INSTAGRAM
+        </span>
+      </a>
+
+      <a
+        href="https://www.band.us/@venusgecko"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group relative w-16 h-16 bg-[#00c73c] text-white rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(0,199,60,0.3)] hover:scale-110 transition-all duration-500"
+      >
+        <Users size={32} />
+        <span className="absolute right-20 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white text-xs tracking-widest opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-white/5">
+          NAVER BAND
         </span>
       </a>
     </div>

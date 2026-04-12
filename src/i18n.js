@@ -28,6 +28,12 @@ i18n
   .init({
     resources,
     fallbackLng: 'ko',
+    supportedLngs: ['ko', 'en', 'ja', 'zh'], // Explicitly define supported languages
+    load: 'languageOnly', // e.g. en-US -> en
+    detection: {
+      order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag'],
+      caches: ['localStorage', 'cookie']
+    },
     interpolation: {
       escapeValue: false
     }

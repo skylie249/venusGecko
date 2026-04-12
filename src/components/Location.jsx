@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { MapPin, Instagram, MessageCircle } from 'lucide-react';
+import { MapPin, Instagram, MessageCircle, Users } from 'lucide-react';
 
 const Location = () => {
   const { t } = useTranslation();
@@ -84,6 +84,10 @@ const Location = () => {
                 <a href="https://open.kakao.com/o/gZhaGrwg" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/60 hover:text-venus-gold transition-colors">
                   <MessageCircle size={24} />
                   <span>KakaoTalk</span>
+                </a>
+                <a href="https://www.band.us/@venusgecko" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white/60 hover:text-venus-gold transition-colors">
+                  <Users size={24} />
+                  <span>Naver Band</span>
                 </a>
               </div>
             </div>
