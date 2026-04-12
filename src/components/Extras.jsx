@@ -4,8 +4,8 @@ import { Instagram, MessageCircle, List } from 'lucide-react';
 export const FloatingCTA = () => {
   const { t, i18n } = useTranslation();
   const isGlobal = i18n.language === 'en' || i18n.language === 'ja';
-  const feedleUrl = isGlobal 
-    ? "https://air.feedle.me/profile/dd285e94-18e9-4444-a40f-bc34075d6d06" 
+  const feedleUrl = isGlobal
+    ? "https://air.feedle.me/profile/dd285e94-18e9-4444-a40f-bc34075d6d06"
     : "https://www.feedle.me/profile/dd285e94-18e9-4444-a40f-bc34075d6d06";
 
   return (
@@ -92,11 +92,6 @@ export const Footer = () => {
           <p className="text-white/20 text-[10px] tracking-[0.3em] uppercase">
             {t('footer.copy')}
           </p>
-          <div className="flex gap-10 text-white/40 text-[10px] tracking-[0.3em] uppercase font-medium">
-            <a href="#" className="hover:text-venus-gold transition-colors">Privacy</a>
-            <a href="#" className="hover:text-venus-gold transition-colors">Terms</a>
-            <a href="#" className="hover:text-venus-gold transition-colors">Legal</a>
-          </div>
         </div>
       </div>
     </footer>
