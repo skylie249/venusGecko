@@ -130,6 +130,7 @@ const Hero = () => {
         {/* Subtle overlay for the image side */}
         <div className="absolute inset-0 bg-gradient-to-r from-venus-black via-transparent to-transparent hidden md:block" />
         <div className="absolute inset-0 bg-gradient-to-t from-venus-black via-transparent to-transparent md:hidden" />
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-venus-black/80 to-transparent md:hidden pointer-events-none" />
       </div>
 
     </section>

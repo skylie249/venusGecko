@@ -8,10 +8,10 @@ const LanguageSwitcher = () => {
   const dropdownRef = useRef(null);
 
   const languages = [
-    { code: 'ko', label: 'KR', flag: '🇰🇷', name: '한국어' },
-    { code: 'en', label: 'EN', flag: '🇺🇸', name: 'English' },
-    { code: 'ja', label: 'JP', flag: '🇯🇵', name: '日本語' },
-    { code: 'zh', label: 'CN', flag: '🇨🇳', name: '中文' }
+    { code: 'ko', label: 'KR', flagUrl: 'https://flagcdn.com/w20/kr.png', name: '한국어' },
+    { code: 'en', label: 'EN', flagUrl: 'https://flagcdn.com/w20/us.png', name: 'English' },
+    { code: 'ja', label: 'JP', flagUrl: 'https://flagcdn.com/w20/jp.png', name: '日本語' },
+    { code: 'zh', label: 'CN', flagUrl: 'https://flagcdn.com/w20/cn.png', name: '中文' }
   ];
 
   const currentLang = languages.find(l => l.code === i18n.language) || languages[0];
@@ -38,7 +38,7 @@ const LanguageSwitcher = () => {
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 glass hover:border-venus-gold/50 transition-all duration-300 group"
       >
-        <span className="text-sm">{currentLang.flag}</span>
+        <img src={currentLang.flagUrl} alt={currentLang.label} className="w-4 h-auto object-cover rounded-sm opacity-90 group-hover:opacity-100 transition-opacity" />
         <span className="text-[10px] tracking-widest font-bold text-white/70 group-hover:text-venus-gold">
           {currentLang.label}
         </span>
@@ -61,7 +61,7 @@ const LanguageSwitcher = () => {
                 i18n.language === lang.code ? 'bg-venus-gold/10 text-venus-gold' : 'text-white/60 hover:text-white'
               }`}
             >
-              <span className="text-lg">{lang.flag}</span>
+              <img src={lang.flagUrl} alt={lang.label} className="w-5 h-auto object-cover rounded-sm" />
               <div className="flex flex-col">
                 <span className="text-[10px] tracking-wider font-bold">{lang.label}</span>
                 <span className="text-[8px] text-white/30 uppercase">{lang.name}</span>

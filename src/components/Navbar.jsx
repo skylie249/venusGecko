@@ -55,7 +55,7 @@ const Navbar = () => {
           href="https://open.kakao.com/o/sU7s17pg"
           target="_blank"
           rel="noopener noreferrer"
-          className="border border-venus-gold px-6 py-2 text-sm tracking-widest hover:bg-venus-gold hover:text-venus-black transition-all duration-300 hidden sm:block"
+          className="bg-venus-gold text-venus-black px-6 py-2 text-sm font-bold tracking-widest hover:bg-venus-gold/80 transition-all duration-300 hidden sm:block"
         >
           {t('nav.contact')}
         </a>
