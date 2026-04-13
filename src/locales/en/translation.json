@@ -10,7 +10,7 @@
     "sub": "Eye-contact addicts.",
     "title1": "When Eyes Meet",
     "title2": "The Addiction Begins",
-    "desc": "Venus Gecko: Your Living Jewel. We focus on the wonder of life rather than artificial splendor.",
+    "desc": "Venus Gecko: Your Precious Companion. We focus on the wonder of life rather than artificial splendor.",
     "badge": {
       "top": "Crested Gecko Specialised Breeder",
       "brand_kr": "Venus Gecko",
@@ -20,10 +20,10 @@
   },
   "about": {
     "sub": "Core Essence",
-    "title": "Living Jewel,\nBeyond Value",
-    "desc": "Venus Gecko is more than just a breeder; we propose an artistic lifestyle. Experience the unique quality that awakens the senses of the modern generation.",
-    "gem_title": "The Living Jewel",
-    "gem_desc": "We define geckos as 'dynamic art' rather than just pets. We deliver the wonder felt the moment eyes meet.",
+    "title": "Precious Companion,\nBeyond Value",
+    "desc": "Venus Gecko is more than just a breeder; we propose a proper companion lifestyle. Meet the premium geckos that will be with you for a lifetime.",
+    "gem_title": "The Perfect Companion",
+    "gem_desc": "We define geckos not as mere exotic animals, but as your special 'companion family'. Experience the wonderful connection the moment your eyes meet.",
     "philosophy": {
       "item1": {
         "title": "Pure Quality",
@@ -31,7 +31,7 @@
       },
       "item2": {
         "title": "Artistic Care",
-        "desc": "We maintain the best condition in a delicate environment, treating them like gems."
+        "desc": "We maintain the best condition in a delicate environment, treating them like family."
       },
       "item3": {
         "title": "Premium Trust",
@@ -49,12 +49,12 @@
   },
   "location": {
     "title": "Visit Our Space",
-    "desc": "Experience the Venus Gecko showroom filled with living jewels. Meet geckos waiting for adoption cared for in the finest environment.",
+    "desc": "Experience the Venus Gecko showroom filled with precious companions. Meet geckos waiting for their new family, cared for in the finest environment.",
     "address": "B1, 34 Dongil-ro, Gwangjin-gu, Seoul",
     "reservation": "Book a Visit"
   },
   "footer": {
-    "desc": "Delivering value beyond living gems.\nPremium gecko brand proposing a new lifestyle.",
+    "desc": "Delivering value beyond precious companions.\nA premium gecko brand proposing a new companion culture.",
     "showroom_title": "Showroom",
     "address_info": "34 Dongil-ro, Gwangjin-gu, Seoul\nB1F (Reservation Required)",
     "contact_title": "Contact",

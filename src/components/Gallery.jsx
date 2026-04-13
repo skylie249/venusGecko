@@ -75,7 +75,7 @@ const Gallery = () => {
           </div>
           <div className="flex gap-8 items-center">
             <a
-              href="https://www.instagram.com/stories/highlights/17980435787510762/"
+              href="https://venus-gecko.qshop.ai/JeOaz"
               target="_blank"
               rel="noopener noreferrer"
               className="text-venus-gold flex items-center gap-2 group tracking-widest text-sm uppercase"
@@ -84,7 +84,7 @@ const Gallery = () => {
               <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform duration-300" />
             </a>
             <a
-              href="https://www.instagram.com/stories/highlights/18004099840750838/"
+              href="https://venus-gecko.qshop.ai/Nt04q"
               target="_blank"
               rel="noopener noreferrer"
               className="text-venus-gold flex items-center gap-2 group tracking-widest text-sm uppercase"
