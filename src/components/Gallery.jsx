@@ -255,7 +255,7 @@ const Gallery = () => {
                   onLoad={() => ScrollTrigger.refresh()}
                 />
                 <div className="absolute inset-0 bg-venus-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="text-white text-xs uppercase tracking-widest border border-white/20 py-2 px-4 rounded-full bg-white/5 backdrop-blur-sm">View Album</span>
+                  <span className="text-white text-xs uppercase tracking-widest border border-white/20 py-2 px-4 rounded-full bg-white/5 backdrop-blur-sm">View More</span>
                 </div>
               </div>
               <div className="p-8 space-y-4">
@@ -282,7 +282,7 @@ const Gallery = () => {
             </button>
 
             <h3 className="text-xl md:text-2xl font-bold text-white tracking-wide uppercase text-center hidden md:block">
-              {albumTitleText} <span className="text-venus-gold font-light">Album</span>
+              {albumTitleText} <span className="text-venus-gold font-light">More</span>
             </h3>
 
             <button
@@ -296,7 +296,7 @@ const Gallery = () => {
 
           <div className="flex-1 w-full max-w-7xl mx-auto px-4 md:px-8 pb-20 pt-4 md:pt-8 content-start flex flex-col">
             <h3 className="text-xl md:text-2xl font-bold text-white tracking-wide uppercase text-center mb-6 md:hidden">
-              {albumTitleText} <span className="text-venus-gold font-light">Album</span>
+              {albumTitleText} <span className="text-venus-gold font-light">More</span>
             </h3>
 
             {/* Gender Navigation Bar */}
