@@ -1,11 +1,15 @@
-import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ChevronDown, Globe } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
-  const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef(null);
 
   const languages = [
     { code: 'ko', label: 'KR', flagUrl: 'https://flagcdn.com/w20/kr.png', name: '한국어' },
@@ -18,59 +22,42 @@ const LanguageSwitcher = () => {
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
-    setIsOpen(false);
   };
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
   return (
-    <div className="relative" ref={dropdownRef}>
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 glass hover:border-venus-gold/50 transition-all duration-300 group"
-      >
-        <img src={currentLang.flagUrl} alt={currentLang.label} className="w-4 h-auto object-cover rounded-sm opacity-90 group-hover:opacity-100 transition-opacity" />
-        <span className="text-[10px] tracking-widest font-bold text-white/70 group-hover:text-venus-gold">
-          {currentLang.label}
-        </span>
-        <ChevronDown 
-          size={12} 
-          className={`text-white/30 group-hover:text-venus-gold transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} 
-        />
-      </button>
-
-      {/* Dropdown Menu */}
-      <div className={`absolute right-0 mt-2 w-36 rounded-2xl border border-white/5 glass-dark overflow-hidden transition-all duration-300 z-[100] ${
-        isOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'
-      }`}>
-        <div className="py-2">
-          {languages.map((lang) => (
-            <button
-              key={lang.code}
-              onClick={() => changeLanguage(lang.code)}
-              className={`w-full flex items-center gap-3 px-4 py-2 text-left transition-all duration-300 hover:bg-white/5 ${
-                i18n.language === lang.code ? 'bg-venus-gold/10 text-venus-gold' : 'text-white/60 hover:text-white'
-              }`}
-            >
-              <img src={lang.flagUrl} alt={lang.label} className="w-5 h-auto object-cover rounded-sm" />
-              <div className="flex flex-col">
-                <span className="text-[10px] tracking-wider font-bold">{lang.label}</span>
-                <span className="text-[8px] text-white/30 uppercase">{lang.name}</span>
-              </div>
-            </button>
-          ))}
-        </div>
-      </div>
-    </div>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button 
+          variant="outline" 
+          size="sm" 
+          className="flex items-center gap-2 rounded-full border-white/10 glass bg-transparent hover:bg-white/5 hover:border-venus-gold/50 hover:text-venus-gold transition-all duration-300 h-8 px-3"
+        >
+          <img src={currentLang.flagUrl} alt={currentLang.label} className="w-4 h-auto object-cover rounded-sm opacity-90 transition-opacity" />
+          <span className="text-[10px] tracking-widest font-bold text-white/70">
+            {currentLang.label}
+          </span>
+          <ChevronDown size={12} className="text-white/30 transition-transform duration-300 group-data-[state=open]:rotate-180" />
+        </Button>
+      </DropdownMenuTrigger>
+      
+      <DropdownMenuContent align="end" className="w-36 rounded-2xl glass-dark border-white/5 z-[100] p-2 bg-black/60 backdrop-blur-xl">
+        {languages.map((lang) => (
+          <DropdownMenuItem
+            key={lang.code}
+            onClick={() => changeLanguage(lang.code)}
+            className={`flex items-center gap-3 px-2 py-2 cursor-pointer transition-all duration-300 rounded-xl outline-none ${
+              i18n.language === lang.code ? 'bg-venus-gold/10 text-venus-gold hover:bg-venus-gold/20 hover:text-venus-gold' : 'text-white/60 hover:bg-white/10 hover:text-white'
+            }`}
+          >
+            <img src={lang.flagUrl} alt={lang.label} className="w-5 h-auto object-cover rounded-sm" />
+            <div className="flex flex-col">
+              <span className="text-[10px] tracking-wider font-bold leading-tight">{lang.label}</span>
+              <span className="text-[8px] text-white/30 uppercase leading-tight">{lang.name}</span>
+            </div>
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };
 

@@ -4,11 +4,13 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight, X, ChevronLeft, Loader2 } from 'lucide-react';
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
 gsap.registerPlugin(ScrollTrigger);
 
 // Google Drive Base Folders
-const ROOT_ALL_ID = import.meta.env.VITE_ROOT_ALL_ID;
 const MALE_ALL_ID = import.meta.env.VITE_MALE_ALL_ID;
 const FEMALE_ALL_ID = import.meta.env.VITE_FEMALE_ALL_ID;
 
@@ -130,8 +132,7 @@ const Gallery = () => {
   const handleGenderClick = (gender) => {
     setGenderFilter(gender);
     setActiveMorph(null);
-    if (gender === 'ALL') fetchDriveImages(ROOT_ALL_ID);
-    else if (gender === 'MALE') fetchDriveImages(MALE_ALL_ID);
+    if (gender === 'MALE') fetchDriveImages(MALE_ALL_ID);
     else if (gender === 'FEMALE') fetchDriveImages(FEMALE_ALL_ID);
   };
 
@@ -139,6 +140,11 @@ const Gallery = () => {
     setActiveMorph(morph);
     if (genderFilter === 'MALE') fetchDriveImages(morph.maleId);
     else if (genderFilter === 'FEMALE') fetchDriveImages(morph.femaleId);
+  };
+
+  const openGenderAlbum = (gender) => {
+    setSelectedMorph({ morph: 'GENDER_VIEW' }); // Truthy object to open the overlay
+    handleGenderClick(gender);
   };
 
   // Prevent background scrolling when overlays are open
@@ -174,19 +180,23 @@ const Gallery = () => {
 
   // Album Overlay GSAP animations
   useEffect(() => {
-    if (selectedMorph && !selectedImage && !isGalleryLoading) {
+    if (selectedMorph) {
       gsap.fromTo('.album-overlay',
-        { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.4, ease: 'power3.out' }
       );
-      if (fetchedImages.length > 0) {
-        gsap.fromTo('.album-item',
-          { opacity: 0, scale: 0.9, y: 20 },
-          { opacity: 1, scale: 1, y: 0, duration: 0.4, stagger: 0.05, ease: 'back.out(1.2)', delay: 0.3 }
-        );
-      }
     }
-  }, [selectedMorph, selectedImage, isGalleryLoading, fetchedImages]);
+  }, [selectedMorph]);
+
+  // Album Items GSAP animations
+  useEffect(() => {
+    if (selectedMorph && !isGalleryLoading && fetchedImages.length > 0 && !selectedImage) {
+      gsap.fromTo('.album-item',
+        { opacity: 0, scale: 0.9, y: 20 },
+        { opacity: 1, scale: 1, y: 0, duration: 0.4, stagger: 0.05, ease: 'back.out(1.2)' }
+      );
+    }
+  }, [selectedMorph, isGalleryLoading, fetchedImages, selectedImage]);
 
   // Detail View GSAP animations
   useEffect(() => {
@@ -219,33 +229,29 @@ const Gallery = () => {
             <p className="text-white/50 text-lg font-light">{t('gallery.desc')}</p>
           </div>
           <div className="flex gap-8 items-center">
-            <a
-              href="https://venus-gecko.qshop.ai/JeOaz"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-venus-gold flex items-center gap-2 group tracking-widest text-sm uppercase"
+            <button
+              onClick={() => openGenderAlbum('MALE')}
+              className="text-venus-gold flex items-center gap-2 group tracking-widest text-sm uppercase cursor-pointer bg-transparent border-0"
             >
               {t('gallery.male')}
               <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform duration-300" />
-            </a>
-            <a
-              href="https://venus-gecko.qshop.ai/Nt04q"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-venus-gold flex items-center gap-2 group tracking-widest text-sm uppercase"
+            </button>
+            <button
+              onClick={() => openGenderAlbum('FEMALE')}
+              className="text-venus-gold flex items-center gap-2 group tracking-widest text-sm uppercase cursor-pointer bg-transparent border-0"
             >
               {t('gallery.female')}
               <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform duration-300" />
-            </a>
+            </button>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {geckos.map((gecko) => (
-            <div
+            <Card
               key={gecko.id}
               onClick={() => openAlbum(gecko)}
-              className="gecko-card group bg-venus-black border border-white/5 overflow-hidden transition-all duration-500 hover:border-venus-gold/50 cursor-pointer"
+              className="gecko-card group bg-black/40 border-white/5 overflow-hidden transition-all duration-500 hover:border-venus-gold/50 cursor-pointer rounded-xl backdrop-blur-xl shrink-0"
             >
               <div className="aspect-[4/5] bg-white/5 overflow-hidden flex items-center justify-center p-8 relative">
                 <img
@@ -255,16 +261,18 @@ const Gallery = () => {
                   onLoad={() => ScrollTrigger.refresh()}
                 />
                 <div className="absolute inset-0 bg-venus-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="text-white text-xs uppercase tracking-widest border border-white/20 py-2 px-4 rounded-full bg-white/5 backdrop-blur-sm">View More</span>
+                  <Badge variant="outline" className="text-white text-xs uppercase tracking-widest border-white/20 py-1.5 px-4 rounded-full bg-black/40 backdrop-blur-md">View More</Badge>
                 </div>
               </div>
-              <div className="p-8 space-y-4">
-                <span className="text-venus-gold text-[10px] tracking-widest uppercase font-bold">{gecko.morph}</span>
+              <CardContent className="p-8 space-y-3">
+                <Badge variant="outline" className="text-venus-gold border-venus-gold/30 uppercase tracking-widest text-[10px] rounded-full">
+                  {gecko.morph}
+                </Badge>
                 <div className="flex justify-between items-center">
-                  <h3 className="text-2xl font-bold text-white">{t(`geckos.${gecko.nameKey}`)}</h3>
+                  <h3 className="text-2xl font-bold text-white tracking-wide">{t(`geckos.${gecko.nameKey}`)}</h3>
                 </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>
@@ -272,14 +280,15 @@ const Gallery = () => {
       {/* Album Overlay */}
       {selectedMorph && (
         <div className="album-overlay fixed inset-0 z-[2000] bg-venus-black/98 backdrop-blur-xl overflow-y-auto w-full h-full flex flex-col">
-          <div className="sticky top-0 w-full p-6 md:p-8 flex items-center justify-between bg-gradient-to-b from-venus-black/90 to-transparent z-20 pt-safe backdrop-blur-md">
-            <button
+          <div className="sticky top-0 w-full p-6 md:p-8 flex items-center justify-between bg-gradient-to-b from-venus-black/95 to-transparent z-20 pt-safe backdrop-blur-xl border-b border-venus-gold/10">
+            <Button
+              variant="ghost"
               onClick={() => setSelectedMorph(null)}
-              className="flex items-center gap-2 text-white/70 hover:text-venus-gold transition-colors group tracking-widest text-[10px] md:text-sm uppercase font-bold"
+              className="group text-white/70 hover:text-venus-gold hover:bg-transparent px-0 font-bold uppercase tracking-widest text-[10px] md:text-sm"
             >
-              <ChevronLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
+              <ChevronLeft size={20} className="mr-2 transition-transform group-hover:-translate-x-1" />
               <span className="hidden xs:inline">Back to Gallery</span>
-            </button>
+            </Button>
 
             <h3 className="text-xl md:text-2xl font-bold text-white tracking-wide uppercase text-center hidden md:block">
               {albumTitleText} <span className="text-venus-gold font-light">More</span>
@@ -301,7 +310,7 @@ const Gallery = () => {
 
             {/* Gender Navigation Bar */}
             <div className="w-full flex justify-center gap-2 md:gap-4 mb-4">
-              {['ALL', 'MALE', 'FEMALE'].map(g => (
+              {['MALE', 'FEMALE'].map(g => (
                 <button
                   key={g}
                   onClick={() => handleGenderClick(g)}

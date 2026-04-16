@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
+import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const { t } = useTranslation();
@@ -51,14 +52,18 @@ const Navbar = () => {
 
       <div className="flex items-center gap-8">
         <LanguageSwitcher />
-        <a
-          href="https://open.kakao.com/o/sU7s17pg"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-venus-gold text-venus-black px-6 py-2 text-sm font-bold tracking-widest hover:bg-venus-gold/80 transition-all duration-300 hidden sm:block"
+        <Button
+          asChild
+          className="bg-venus-gold text-venus-black hover:bg-venus-gold/80 hover:text-venus-black px-6 py-2 h-auto text-sm font-bold tracking-widest transition-all duration-300 hidden sm:flex rounded-none"
         >
-          {t('nav.contact')}
-        </a>
+          <a
+            href="https://open.kakao.com/o/sU7s17pg"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t('nav.contact')}
+          </a>
+        </Button>
       </div>
     </nav>
   );
