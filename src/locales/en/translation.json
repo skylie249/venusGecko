@@ -2,7 +2,7 @@
   "nav": {
     "home": "Home",
     "about": "About",
-    "showroom": "Showroom",
+    "showroom": "Signature",
     "visit": "Visit",
     "contact": "Contact"
   },
@@ -40,7 +40,7 @@
     }
   },
   "gallery": {
-    "title": "Digital Showroom",
+    "title": "Signature Line",
     "desc": "Explore our rare and exclusive lineup of geckos.",
     "male": "View MALE",
     "female": "View FEMALE",
@@ -55,7 +55,7 @@
   },
   "footer": {
     "desc": "Delivering value beyond precious companions.\nA premium gecko brand proposing a new companion culture.",
-    "showroom_title": "Showroom",
+    "showroom_title": "Signature",
     "address_info": "34 Dongil-ro, Gwangjin-gu, Seoul\nB1F (Reservation Required)",
     "contact_title": "Contact",
     "copy": "© 2026 Venus Gecko. All Rights Reserved. Crafted for Excellency."
@@ -65,6 +65,7 @@
     "radu": "Radu",
     "tina": "Tina",
     "kona": "Kona",
+    "polly": "Polly",
     "brand_tail": "| Venus Gecko"
   }
 }

@@ -2,7 +2,7 @@
   "nav": {
     "home": "首页",
     "about": "关于",
-    "showroom": "展厅",
+    "showroom": "招牌",
     "visit": "参观",
     "contact": "联系"
   },
@@ -40,7 +40,7 @@
     }
   },
   "gallery": {
-    "title": "数字展厅",
+    "title": "招牌品系",
     "desc": "探索我们稀有且独家的守宫阵容。",
     "male": "查看雄性 (MALE)",
     "female": "查看雌性 (FEMALE)",
@@ -55,7 +55,7 @@
   },
   "footer": {
     "desc": "传递超越伴侣宠物的价值。\n提出全新宠物文化的优质品牌。",
-    "showroom_title": "展厅",
+    "showroom_title": "招牌",
     "address_info": "首尔广津区东一路34号\n地下1层 (需预约)",
     "contact_title": "联系",
     "copy": "© 2026 Venus Gecko. 保留所有权利. 为卓越而生。"
@@ -65,6 +65,7 @@
     "radu": "Radu",
     "tina": "Tina",
     "kona": "Kona",
+    "polly": "Polly",
     "brand_tail": "| Venus Gecko"
   }
 }

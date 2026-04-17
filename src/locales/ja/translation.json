@@ -2,7 +2,7 @@
   "nav": {
     "home": "ホーム",
     "about": "アバウト",
-    "showroom": "ショールーム",
+    "showroom": "看板",
     "visit": "アクセス",
     "contact": "お問い合わせ"
   },
@@ -40,7 +40,7 @@
     }
   },
   "gallery": {
-    "title": "デジタルショールーム",
+    "title": "シグネチャーライン",
     "desc": "ベヌスゲコの希少なラインナップをご覧ください。",
     "male": "MALEを見る",
     "female": "FEMALEを見る",
@@ -55,7 +55,7 @@
   },
   "footer": {
     "desc": "大切なパートナー、それ以上の価値を伝えます。\n新しいペット文化を提案するプレミアムブランド。",
-    "showroom_title": "Showroom",
+    "showroom_title": "看板",
     "address_info": "ソウル 広津区 同一路 34\n地下1階 (要予約)",
     "contact_title": "Contact",
     "copy": "© 2026 Venus Gecko. All Rights Reserved. Crafted for Excellency."
@@ -65,6 +65,7 @@
     "radu": "ラドゥ",
     "tina": "ティナ",
     "kona": "コナ",
+    "polly": "ポリー",
     "brand_tail": "| ベヌスゲコ"
   }
 }

@@ -2,7 +2,7 @@
   "nav": {
     "home": "홈",
     "about": "어바웃",
-    "showroom": "쇼룸",
+    "showroom": "시그니처",
     "visit": "방문하기",
     "contact": "문의"
   },
@@ -40,7 +40,7 @@
     }
   },
   "gallery": {
-    "title": "디지털 쇼룸",
+    "title": "시그니처",
     "desc": "베누스게코의 희소성 있는 라인업을 확인하세요.",
     "male": "MALE 알아보기",
     "female": "FEMALE 알아보기",
@@ -55,7 +55,7 @@
   },
   "footer": {
     "desc": "소중한 반려동물, 그 이상의 가치를 전달합니다.\nMZ세대의 새로운 반려문화를 제안하는 프리미엄 브랜드.",
-    "showroom_title": "Showroom",
+    "showroom_title": "시그니처",
     "address_info": "서울 광진구 동일로 34\n지하 1층 (예약 필수)",
     "contact_title": "Contact",
     "copy": "© 2026 Venus Gecko. All Rights Reserved. Crafted for Excellency."
@@ -65,6 +65,7 @@
     "radu": "라두",
     "tina": "티나",
     "kona": "코나",
+    "polly": "폴리",
     "brand_tail": "| 베누스게코"
   }
 }

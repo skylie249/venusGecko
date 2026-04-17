@@ -7,6 +7,13 @@ import { ArrowRight, X, ChevronLeft, Loader2 } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -60,6 +67,15 @@ const geckos = [
     img: '/images/kona.jpg',
     folderId: '1KBK3Pl2kjj_MNrIncMn9A32A6U-fWndX', // Individual gecko folder
   },
+  // 새로운 5번째 시그니처 개체를 임시로 추가해두었습니다. 실제 정보로 수정해서 사용해 주세요.
+  {
+    id: 5,
+    morph: 'SPT ',
+    nameKey: 'polly', // ko.json 등의 파일에 'new_gecko' 키를 추가해야 합니다.
+    status: 'Available',
+    img: '/images/polly.jpg',
+    folderId: '1KBK3Pl2kjj_MNrIncMn9A32A6U-fWndX',
+  },
 ];
 
 const Gallery = () => {
@@ -87,10 +103,10 @@ const Gallery = () => {
       setIsGalleryLoading(true);
       setTimeout(() => {
         setFetchedImages([
-          { id: 'mock-1', url: '/images/duecoo.jpg' },
-          { id: 'mock-2', url: '/images/radu.jpg' },
-          { id: 'mock-3', url: '/images/tina.jpg' },
-          { id: 'mock-4', url: '/images/kona.jpg' }
+          { id: 'mock-1', name: 'duecoo_01.jpg', url: '/images/duecoo.jpg' },
+          { id: 'mock-2', name: 'radu_detail.jpg', url: '/images/radu.jpg' },
+          { id: 'mock-3', name: 'tina_pose.jpg', url: '/images/tina.jpg' },
+          { id: 'mock-4', name: 'kona_macro.jpg', url: '/images/kona.jpg' }
         ]);
         setIsGalleryLoading(false);
       }, 800); // simulate network delay
@@ -109,6 +125,7 @@ const Gallery = () => {
       if (data.files) {
         const mapped = data.files.map(file => ({
           id: file.id,
+          name: file.name,
           // Replace lower resolution (typically s220) with high resolution (s1000)
           url: file.thumbnailLink ? file.thumbnailLink.replace(/=s\d+/, '=s1000') : ''
         })).filter(img => img.url !== '');
@@ -246,34 +263,53 @@ const Gallery = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {geckos.map((gecko) => (
-            <Card
-              key={gecko.id}
-              onClick={() => openAlbum(gecko)}
-              className="gecko-card group bg-black/40 border-white/5 overflow-hidden transition-all duration-500 hover:border-venus-gold/50 cursor-pointer rounded-xl backdrop-blur-xl shrink-0"
-            >
-              <div className="aspect-[4/5] bg-white/5 overflow-hidden flex items-center justify-center p-8 relative">
-                <img
-                  src={gecko.img}
-                  alt={`${t(`geckos.${gecko.nameKey}`)} - ${gecko.morph} Crested Gecko ${t('geckos.brand_tail')}`}
-                  className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
-                  onLoad={() => ScrollTrigger.refresh()}
-                />
-                <div className="absolute inset-0 bg-venus-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <Badge variant="outline" className="text-white text-xs uppercase tracking-widest border-white/20 py-1.5 px-4 rounded-full bg-black/40 backdrop-blur-md">View More</Badge>
-                </div>
-              </div>
-              <CardContent className="p-8 space-y-3">
-                <Badge variant="outline" className="text-venus-gold border-venus-gold/30 uppercase tracking-widest text-[10px] rounded-full">
-                  {gecko.morph}
-                </Badge>
-                <div className="flex justify-between items-center">
-                  <h3 className="text-2xl font-bold text-white tracking-wide">{t(`geckos.${gecko.nameKey}`)}</h3>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+        {/* 최적화: 슬라이드(Carousel) 적용. 마우스/터치로 좌우 스와이프가 가능하며 데스크탑에선 4개씩 보여집니다. */}
+        <div className="w-full relative px-2">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4 md:-ml-6 lg:-ml-8 py-4">
+              {geckos.map((gecko) => (
+                <CarouselItem key={gecko.id} className="pl-4 md:pl-6 lg:pl-8 sm:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+                  <Card
+                    onClick={() => openAlbum(gecko)}
+                    className="gecko-card group h-full bg-black/40 border-white/5 overflow-hidden transition-all duration-500 hover:border-venus-gold/50 cursor-pointer rounded-xl backdrop-blur-xl flex flex-col"
+                  >
+                    <div className="aspect-[4/5] bg-white/5 overflow-hidden flex items-center justify-center p-8 relative">
+                      <img
+                        src={gecko.img}
+                        alt={`${t(`geckos.${gecko.nameKey}`)} - ${gecko.morph} Crested Gecko ${t('geckos.brand_tail')}`}
+                        className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                        onLoad={() => ScrollTrigger.refresh()}
+                      />
+                      <div className="absolute inset-0 bg-venus-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <Badge variant="outline" className="text-white text-xs uppercase tracking-widest border-white/20 py-1.5 px-4 rounded-full bg-black/40 backdrop-blur-md">View More</Badge>
+                      </div>
+                    </div>
+                    <CardContent className="p-8 space-y-3 flex-1 flex flex-col justify-end">
+                      <div className="mb-auto">
+                        <Badge variant="outline" className="text-venus-gold border-venus-gold/30 uppercase tracking-widest text-[10px] rounded-full inline-block mb-3">
+                          {gecko.morph}
+                        </Badge>
+                      </div>
+                      <div className="flex justify-between items-center w-full">
+                        <h3 className="text-2xl font-bold text-white tracking-wide">{t(`geckos.${gecko.nameKey}`)}</h3>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            {/* 좌/우 네비게이션 화살표 */}
+            <div className="hidden md:block">
+              <CarouselPrevious className="-left-4 lg:-left-12 bg-venus-black/80 backdrop-blur border-venus-gold/30 text-venus-gold hover:bg-venus-gold hover:text-venus-black transition-all duration-300 h-12 w-12" />
+              <CarouselNext className="-right-4 lg:-right-12 bg-venus-black/80 backdrop-blur border-venus-gold/30 text-venus-gold hover:bg-venus-gold hover:text-venus-black transition-all duration-300 h-12 w-12" />
+            </div>
+          </Carousel>
         </div>
       </div>
 
@@ -365,7 +401,9 @@ const Gallery = () => {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-venus-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <span className="text-white text-xs md:text-sm uppercase tracking-widest font-light bg-black/30 px-3 py-1.5 rounded-full backdrop-blur-sm border border-white/10">View Detail</span>
+                      <span className="text-white text-xs md:text-sm uppercase tracking-widest font-light bg-black/30 px-3 py-1.5 rounded-full backdrop-blur-sm border border-white/10 text-center max-w-[90%] break-words">
+                        {image.name.replace(/\.[^/.]+$/, "").replace(/[_-]/g, " ")}
+                      </span>
                     </div>
                   </div>
                 ))}
@@ -391,7 +429,7 @@ const Gallery = () => {
               className="flex items-center gap-2 text-white/60 hover:text-venus-gold transition-colors group tracking-widest text-[10px] md:text-xs uppercase font-bold"
             >
               <ChevronLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
-              Back to Album
+              Back to Gallery
             </button>
 
             <button
@@ -412,14 +450,17 @@ const Gallery = () => {
             <div className="relative group max-w-full max-h-full">
               <img
                 src={selectedImage.url}
-                alt="Detail view"
+                alt={selectedImage.name}
                 className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-[0_0_100px_rgba(0,0,0,0.8)] border border-white/5 detail-image"
               />
             </div>
           </div>
 
-          {/* Subtle footer info for Premium look */}
-          <div className="w-full p-8 text-center">
+          {/* Subtle footer info for Detail View */}
+          <div className="w-full p-8 text-center flex flex-col gap-2">
+            <p className="text-white/80 text-sm md:text-base uppercase tracking-widest font-light">
+              {selectedImage.name.replace(/\.[^/.]+$/, "").replace(/[_-]/g, " ")}
+            </p>
             <p className="text-white/20 text-[10px] uppercase tracking-[0.2em]">Venus Gecko Premium Collection</p>
           </div>
         </div>
