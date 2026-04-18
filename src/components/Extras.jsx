@@ -14,7 +14,7 @@ export const FloatingCTA = () => {
 
   return (
     <div className="fixed bottom-6 right-4 md:bottom-10 md:right-10 flex flex-col items-end gap-4 md:gap-6 z-[1001]">
-      
+
       {/* Speed Dial Menu Items */}
       <div className={`flex flex-col items-end gap-4 md:gap-6 transition-all duration-300 origin-bottom ${isOpen ? 'scale-100 opacity-100 translate-y-0' : 'scale-50 opacity-0 translate-y-10 pointer-events-none'}`}>
         <a
@@ -87,7 +87,7 @@ export const FloatingCTA = () => {
 export const Footer = () => {
   const { t } = useTranslation();
   return (
-    <footer className="pt-20 md:pt-24 pb-12 border-t border-white/5 bg-venus-black overflow-hidden relative">
+    <footer className="pt-20 md:pt-24 pb-28 md:pb-12 border-t border-white/5 bg-venus-black overflow-hidden relative">
       <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-venus-gold/5 blur-[150px] rounded-full" />
 
       <div className="container mx-auto px-4 md:px-16 relative z-10">
@@ -126,6 +126,31 @@ export const Footer = () => {
           <p className="text-white/20 text-[10px] tracking-[0.3em] uppercase">
             {t('footer.copy')}
           </p>
+
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 md:pr-24 lg:pr-32 relative w-full md:w-auto justify-center md:justify-end">
+            <span className="text-venus-gold text-[10px] tracking-[0.3em] uppercase font-bold">
+              Venus Friends
+            </span>
+            <div className="flex items-center gap-4">
+              <a
+                href="https://www.feedle.me/profile/4e273a00-7444-402d-8a99-15a11907bce2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/40 hover:text-white text-xs tracking-wider transition-colors"
+              >
+                TOPS CRE
+              </a>
+              <span className="text-white/10 text-xs">|</span>
+              <a
+                href="https://www.dodosi.co.kr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/40 hover:text-white text-xs tracking-wider transition-colors"
+              >
+                도도시
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
