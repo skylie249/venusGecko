@@ -133,7 +133,7 @@ export const Footer = () => {
             </span>
             <div className="flex items-center gap-4">
               <a
-                href="https://www.feedle.me/profile/4e273a00-7444-402d-8a99-15a11907bce2"
+                href="https://tops-cre.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/40 hover:text-white text-xs tracking-wider transition-colors"
