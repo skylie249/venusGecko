@@ -106,7 +106,8 @@ const Gallery = () => {
           { id: 'mock-1', name: 'duecoo_01.jpg', url: '/images/duecoo.jpg' },
           { id: 'mock-2', name: 'radu_detail.jpg', url: '/images/radu.jpg' },
           { id: 'mock-3', name: 'tina_pose.jpg', url: '/images/tina.jpg' },
-          { id: 'mock-4', name: 'kona_macro.jpg', url: '/images/kona.jpg' }
+          { id: 'mock-4', name: 'kona_macro.jpg', url: '/images/kona.jpg' },
+          { id: 'mock-5', name: 'polly_01.jpg', url: '/images/polly.jpg' }
         ]);
         setIsGalleryLoading(false);
       }, 800); // simulate network delay
